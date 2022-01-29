@@ -11,8 +11,8 @@ class ScreenHome extends StatefulWidget {
 }
 
 class _ScreenHomeState extends State<ScreenHome> {
-  var width = Random().nextInt(100);
-  var height = Random().nextInt(100);
+  int width = Random().nextInt(100) + 140;
+  int height = Random().nextInt(100) + 140;
   int index = 0;
   List<Color> kolorki = [
     Colors.black,
@@ -33,8 +33,8 @@ class _ScreenHomeState extends State<ScreenHome> {
               child: Center(
                 child: Container(
                   alignment: Alignment.center,
-                  width: width.toDouble(),
-                  height: height.toDouble(),
+                  width: width.toDouble() + 140,
+                  height: height.toDouble() + 140,
                   color: kolorki[index],
                 ),
               ),
