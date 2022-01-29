@@ -22,47 +22,89 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      drawer: Drawer(),
-      appBar: AppBar(
-        iconTheme: IconThemeData(
-          color: Colors.black,
+    return SafeArea(
+      child: Scaffold(
+        drawer: Drawer(
+          child: Column(children: [
+            TextButton(
+                child: MyTextWidget(
+                  size: 20.0,
+                  color: Colors.black,
+                  text: "Numer0",
+                ),
+                onPressed: () {
+                  setState(() {
+                    index = 0;
+                    Navigator.of(context).pop();
+                  });
+                }),
+            TextButton(
+                child: MyTextWidget(
+                  size: 20.0,
+                  color: Colors.black,
+                  text: "Numer1",
+                ),
+                onPressed: () {
+                  setState(() {
+                    index = 1;
+                    Navigator.of(context).pop();
+                  });
+                }),
+            TextButton(
+                child: MyTextWidget(
+                  size: 20.0,
+                  color: Colors.black,
+                  text: "Numer2",
+                ),
+                onPressed: () {
+                  setState(() {
+                    index = 2;
+                    Navigator.of(context).pop();
+                  });
+                })
+          ]),
         ),
-        elevation: 0,
-        backgroundColor: Colors.transparent,
-        title: MyTextWidget(
-          text: "Launcher",
-          color: Colors.black,
-          size: 20,
+        appBar: AppBar(
+          iconTheme: IconThemeData(
+            color: Colors.black,
+          ),
+          elevation: 0,
+          backgroundColor: Colors.transparent,
+          title: MyTextWidget(
+            text: "Launcher",
+            color: Colors.black,
+            size: 20,
+          ),
+          centerTitle: true,
         ),
-        centerTitle: true,
+        bottomNavigationBar: BottomAppBar(
+          child:
+              Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+            IconButton(
+                onPressed: () {
+                  setState(() {
+                    index = 0;
+                  });
+                },
+                icon: Icon(Icons.menu)),
+            IconButton(
+                onPressed: () {
+                  setState(() {
+                    index = 1;
+                  });
+                },
+                icon: Icon(Icons.search)),
+            IconButton(
+                onPressed: () {
+                  setState(() {
+                    index = 2;
+                  });
+                },
+                icon: Icon(Icons.done)),
+          ]),
+        ),
+        body: screens[index],
       ),
-      bottomNavigationBar: BottomAppBar(
-        child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-          IconButton(
-              onPressed: () {
-                setState(() {
-                  index = 0;
-                });
-              },
-              icon: Icon(Icons.menu)),
-          IconButton(
-              onPressed: () {
-                setState(() {
-                  index = 1;
-                });
-              },
-              icon: Icon(Icons.search)),
-          IconButton(
-              onPressed: () {
-                setState(() {
-                  index = 2;
-                });
-              },
-              icon: Icon(Icons.done)),
-        ]),
-      ),
-      body: screens[index],
     );
   }
 }
