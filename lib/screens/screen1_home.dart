@@ -56,7 +56,7 @@ class _ScreenHomeState extends State<ScreenHome> {
                     child: MyTextWidget(
                       color: Colors.pink,
                       size: 40.0,
-                      text: "Don't",
+                      text: "Don't do this",
                     ),
                   ),
                 ),

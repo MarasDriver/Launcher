@@ -30,7 +30,7 @@ class _HomeState extends State<Home> {
                 child: MyTextWidget(
                   size: 20.0,
                   color: Colors.black,
-                  text: "Numer0",
+                  text: "Kliken Machen",
                 ),
                 onPressed: () {
                   setState(() {
@@ -42,7 +42,7 @@ class _HomeState extends State<Home> {
                 child: MyTextWidget(
                   size: 20.0,
                   color: Colors.black,
-                  text: "Numer1",
+                  text: "Calculator",
                 ),
                 onPressed: () {
                   setState(() {
@@ -54,7 +54,7 @@ class _HomeState extends State<Home> {
                 child: MyTextWidget(
                   size: 20.0,
                   color: Colors.black,
-                  text: "Numer2",
+                  text: "Lista zadań",
                 ),
                 onPressed: () {
                   setState(() {
